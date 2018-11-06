@@ -59,9 +59,19 @@ public class WetterGUI extends javax.swing.JFrame {
         menuStations.setText("Stations");
 
         miAddStation.setText("Add Weather Station");
+        miAddStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAddStationActionPerformed(evt);
+            }
+        });
         menuStations.add(miAddStation);
 
         miRemoveStation.setText("Remove Weather Station");
+        miRemoveStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRemoveStationActionPerformed(evt);
+            }
+        });
         menuStations.add(miRemoveStation);
 
         menuBar.add(menuStations);
@@ -80,6 +90,14 @@ public class WetterGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miAddStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddStationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miAddStationActionPerformed
+
+    private void miRemoveStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRemoveStationActionPerformed
+        wtm.removeStation(tableWeatherStations.getSelectedRows());
+    }//GEN-LAST:event_miRemoveStationActionPerformed
 
     /**
      * @param args the command line arguments

@@ -36,13 +36,21 @@ public class WetterTableRenderer implements TableCellRenderer{
             label.setBackground(Color.green);
         }
         
-        switch(col)
+        WetterTableModel wtm = new WetterTableModel();
+        if(wtm.getColumnCount()==4)
+        {switch(col)
         {
             case 0: label.setText(w.getPlace());break;
             case 1: label.setText(String.format("%dm", w.getSeaLevel()));break;
             case 2: label.setText(String.format("%.1f°", w.getTemperature()));break;
             case 3: label.setText(String.format("%d", w.getHumidity()).concat("%")); break;
-        }
+        }} else{
+            switch(col)
+        {
+            case 0: label.setText(w.getPlace());break;
+            case 1: label.setText(String.format("%.1f°", w.getTemperature()));break;
+            case 2: label.setText(String.format("%d", w.getHumidity()).concat("%")); break;
+        }}
         return label;
     }
     
