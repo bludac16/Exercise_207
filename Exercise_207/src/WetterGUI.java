@@ -13,8 +13,10 @@ public class WetterGUI extends javax.swing.JFrame {
     /**
      * Creates new form WetterGUI
      */
+    private WetterTableModel wtm = new WetterTableModel();
     public WetterGUI() {
         initComponents();
+        tableWeatherStations.setModel(wtm);
     }
 
     /**
@@ -63,7 +65,7 @@ public class WetterGUI extends javax.swing.JFrame {
 
         menuBar.add(menuStations);
 
-        menuValues.setText("Edit");
+        menuValues.setText("Values");
 
         miSetTemperature.setText("Set Temperature");
         menuValues.add(miSetTemperature);
