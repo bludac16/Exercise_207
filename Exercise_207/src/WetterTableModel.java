@@ -25,6 +25,11 @@ public class WetterTableModel extends AbstractTableModel{
     public int getColumnCount() {
         return colNames.length;
     }
+    
+     @Override
+    public String getColumnName(int i) {
+        return colNames[i];
+    }
 
     @Override
     public Object getValueAt(int row, int col) {

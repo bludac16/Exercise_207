@@ -17,6 +17,7 @@ public class WetterGUI extends javax.swing.JFrame {
     public WetterGUI() {
         initComponents();
         tableWeatherStations.setModel(wtm);
+        tableWeatherStations.setDefaultRenderer(Object.class, new WetterTableRenderer());
     }
 
     /**
