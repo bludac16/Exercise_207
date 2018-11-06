@@ -26,18 +26,54 @@ public class WetterGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableWeatherStations = new javax.swing.JTable();
+        menuBar = new javax.swing.JMenuBar();
+        menuStations = new javax.swing.JMenu();
+        miAddStation = new javax.swing.JMenuItem();
+        miRemoveStation = new javax.swing.JMenuItem();
+        menuValues = new javax.swing.JMenu();
+        miSetTemperature = new javax.swing.JMenuItem();
+        miSetHumidity = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        tableWeatherStations.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tableWeatherStations);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        menuStations.setText("Stations");
+
+        miAddStation.setText("Add Weather Station");
+        menuStations.add(miAddStation);
+
+        miRemoveStation.setText("Remove Weather Station");
+        menuStations.add(miRemoveStation);
+
+        menuBar.add(menuStations);
+
+        menuValues.setText("Edit");
+
+        miSetTemperature.setText("Set Temperature");
+        menuValues.add(miSetTemperature);
+
+        miSetHumidity.setText("Set Humidity");
+        menuValues.add(miSetHumidity);
+
+        menuBar.add(menuValues);
+
+        setJMenuBar(menuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +114,14 @@ public class WetterGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuStations;
+    private javax.swing.JMenu menuValues;
+    private javax.swing.JMenuItem miAddStation;
+    private javax.swing.JMenuItem miRemoveStation;
+    private javax.swing.JMenuItem miSetHumidity;
+    private javax.swing.JMenuItem miSetTemperature;
+    private javax.swing.JTable tableWeatherStations;
     // End of variables declaration//GEN-END:variables
 }
