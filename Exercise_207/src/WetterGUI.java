@@ -14,10 +14,17 @@ public class WetterGUI extends javax.swing.JFrame {
      * Creates new form WetterGUI
      */
     private WetterTableModel wtm = new WetterTableModel();
+    private boolean anzeigen = true;
+
+    public boolean isAnzeigen() {
+        return anzeigen;
+    }
     public WetterGUI() {
         initComponents();
+        wtm.updatecolNames(anzeigen);
         tableWeatherStations.setModel(wtm);
         tableWeatherStations.setDefaultRenderer(Object.class, new WetterTableRenderer());
+       
     }
 
     /**
@@ -92,7 +99,14 @@ public class WetterGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miAddStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddStationActionPerformed
-        // TODO add your handling code here:
+        WetterDialog dlg = new WetterDialog(this, true);
+        dlg.setVisible(true);
+        
+        if( dlg.isOk() ){
+            Wetterstation s = dlg.getS();
+            wtm.addStation(s);
+        }
+        dlg.setVisible(false);
     }//GEN-LAST:event_miAddStationActionPerformed
 
     private void miRemoveStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRemoveStationActionPerformed
